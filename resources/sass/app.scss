@@ -1,0 +1,89 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Bootstrap
+@import '~materialize-css/dist/css/materialize.min';
+
+html{
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+}
+//Typography
+.title{
+	font-family: 'Playfair Display', serif;
+	font-weight: 700;
+}
+.justify{
+	text-align: justify;
+}
+.bold{
+	font-weight: 900;
+}
+//Colors
+.azul{
+	background: #0c2340;
+}
+.azul-text{
+	color: #0c2340;
+}
+.gold{
+	background: #bd923a;
+}
+.gold-text{
+	color: #bd923a;
+}
+.gold:hover{
+	background: #21253e;
+	color: white;
+}
+//Backgrounds
+.hero{
+	background: url(/img/hero.jpg) no-repeat top center;
+	background-size: cover;
+	background-attachment: cover;
+	height: auto;
+	width: 100vw;
+	margin-top: -64px;
+	padding-top: 80px;
+}
+.iso{
+	background:url(/img/iso.png) no-repeat center center;
+	background-size: cover;
+	background-attachment: cover;
+	height: auto;
+	width: auto;
+}
+//Helpers
+.valign-wrapper{
+	height: 100vh;
+	margin-top: -64px;
+}
+.scale{
+	transition: all .5s ease;
+	filter: grayscale(1);
+}
+.scale:hover{
+	transform: scale(1.05);
+	filter: grayscale(0);
+}
+#menu{
+	transition: all .5s ease;
+}
+.overflow{
+	overflow-y: hidden;
+}
+.ck-editor__editable_inline {
+    min-height: 350px;
+}
+//Medias
+@media screen and (min-width: 600px) {
+	.hero{
+		background: url(/img/hero.jpg) no-repeat top center;
+		background-size: cover;
+		background-attachment: cover;
+		height: 100vh;
+		width: 100vw;
+		margin-top: -64px;
+		padding-top: 80px;
+	}
+}
