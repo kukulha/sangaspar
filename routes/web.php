@@ -17,6 +17,8 @@ Auth::routes();
 Route::get('/', 'Web\PagesController@index')->name('home');
 Route::get('blog','Web\PagesController@blog')->name('posts');
 Route::get('post/{slug}','Web\PagesController@post')->name('post');
+Route::get('/categoria/{slug}', 'Web\PagesController@category')->name('category');
+Route::get('etiqueta/{slug}', 'Web\PagesController@tag')->name('tag');
 //ADMIN
 
 //Messages

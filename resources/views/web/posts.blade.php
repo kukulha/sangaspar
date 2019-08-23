@@ -6,8 +6,10 @@
 <main class="container center">
 	<h3 class="azul-text title">Lista de Artículos</h3>
 	<div class="row">
+		
+		@foreach($posts as $post)
 		<div class="col m4 s12">
-			@foreach($posts as $post)
+			
 				<div class="card">
 					<div class="card-image">
 						<img src="{{ Storage::url($post->file) }}" alt="">
@@ -20,8 +22,9 @@
 						<a href="{{ route('post', $post->slug) }}" class="btn gold">Leer más</a>
 					</div>
 				</div>
-			@endforeach
+			
 		</div>
+		@endforeach
 	</div>
 </main>
 @endsection

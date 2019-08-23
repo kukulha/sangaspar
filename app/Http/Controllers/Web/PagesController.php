@@ -24,6 +24,24 @@ class PagesController extends Controller
     public function post($slug)
     {
     	$post = Post::where('slug', $slug)->first();
-        return view('web.post', compact('post'));
+        $related= Post::inRandomOrder()
+            ->where('category_id', $post->category->id)
+            ->where('id', '!=', $post->id)
+            ->paginate(3);
+        return view('web.post', compact('post', 'related'));
     }
+
+    public function category($slug)
+    {
+        $category = Category::where('slug', $slug)->pluck('id')->first();
+        $posts = Post::where('category_id', $category)->orderBy('id' , 'DESC')->paginate();
+        return view('web.posts', compact('posts'));
+    }
+
+    public function tag($slug)
+   {
+        $category = Category::where('slug', $slug)->pluck('id')->first();
+        $posts = Post::withAnyTag($slug)->get();
+        return view('web.posts', compact('posts', 'categories'));
+   }
 }
