@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+
+    <!--SEO -->    
+    <meta name="robots" content="index,follow" />
+    <meta name="geo.region" content="MX" />
+    <!--<link rel=canonical href="http://.com.mx">-->
+    <!--<link rel=canonical href="http://www..com.mx">-->  
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <title>{{ config('app.name', 'Laravel') }} || @yield('title')</title>
-
-    <!-- Scripts -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    @yield('SEO')
     
 
     <!-- Fonts -->
@@ -28,6 +32,7 @@
                 <nav class="navbar azul">
             @endif
                 <div class="nav-wrapper container">
+                    <a href="{{route('home')}}" class="brand-logo"><img src="/img/logo-i.png" class="responsive-img" width="200px" alt=""></a>
                     <a href="" class="sidenav-trigger" data-target="movil"><i class="material-icons left">menu</i></a>
                     <ul class="right hide-on-med-and-down">
                         <li><a href="{{ route('home') }}">Inicio</a></li>

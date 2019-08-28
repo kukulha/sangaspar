@@ -42,6 +42,7 @@ $(document).ready(function(){
         }
         
     });
+    $('.scrollspy').scrollSpy();
 });
 
 $(window).scroll(function() {

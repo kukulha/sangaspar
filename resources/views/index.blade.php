@@ -1,5 +1,52 @@
 @extends('layouts.app')
 
+@section('SEO')
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="Kukulha.com.mx">
+<meta name="designer" content="Kukulha.com.mx">
+
+<!--SEO Facebook -->    
+<meta property="og:title" content="{{ config('app.name') }}">
+<meta property="og:description" content="Situado en San Gaspar de los Reyes, municipio de Jalostotitlán, Jalisco, México, un lugar perfecto para la práctica de Golf que te hará sentir como en casa. Nuestro campo Diseñado por Profesionales Mexicanos retará a todo jugador de cualquier nivel">
+<meta property="fb:app_id" content=""/>  
+<meta property="og:type" content="website">
+<meta property="og:url" content="http://.com.mx/">
+<meta property="og:image" content="http://.com.mx/khms.png">
+<meta property=og:locale content="es_MX">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="">
+
+<!--SEO Twitter -->    
+<meta property=twitter:card content="summary">
+<meta property=twitter:title content="">
+<meta property=twitter:description content="Situado en San Gaspar de los Reyes, municipio de Jalostotitlán, Jalisco, México, un lugar perfecto para la práctica de Golf que te hará sentir como en casa. Nuestro campo Diseñado por Profesionales Mexicanos retará a todo jugador de cualquier nivel">
+<meta property=twitter:creator content="@">
+<meta property=twitter:url content="http://.com.mx">
+<meta property=twitter:image content="">
+
+<!--Schema.org --> 
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org/",
+            "@type": "LocalBusiness",
+            "name": "San Gaspar",
+            "url": "http://www.sangasparclubcampestreydegolf.com",
+            "image": "http://sangasparclubcampestreydegolf.com/img/logo.png",
+            "description" : "Situado en San Gaspar de los Reyes, municipio de Jalostotitlán, Jalisco, México, un lugar perfecto para la práctica de Golf que te hará sentir como en casa. Nuestro campo Diseñado por Profesionales Mexicanos retará a todo jugador de cualquier nivel",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "San Gaspar de los Reyes",
+                "addressRegion": "MX-JAL",
+                "postalCode": "47130",
+                "streetAddress": "S/N"
+            },
+            "telephone": "+52 33-39-66-22-49",
+            "priceRange" : "$$"
+        }
+    </script> 
+@endsection
+
 @section('title', 'Club Campestre y de Golf')
 
 @section('content')
@@ -9,7 +56,7 @@
 			<div class="container center">
 				<img src="/img/logo-bco.png" class="responsive-img" alt="">
 				<h2 class="white-text">¡Nunca antes fue tan fácil <br> Pertenecer a un club de golf!</h2>
-				<a href="" class="btn gold">Obtén ya tu acción</a>
+				<a href="#contact" class="btn gold">Obtén ya tu acción</a>
 			</div>
 		</div>
 	</div>
@@ -67,7 +114,7 @@
 		</div>
 	</section>
 
-	<section class="section">
+	<section class="section scrollspy" id="contact">
 		<div class="container center">
 			<h3 class="azul-text title">Obtén ya tu acción</h3>
 			<div class="row">

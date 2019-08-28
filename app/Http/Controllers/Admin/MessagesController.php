@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Message;
+use Mail;
+use App\Mail\NewContact;
+use App\Mail\MailReceived;
 
 class MessagesController extends Controller
 {
@@ -32,6 +35,8 @@ class MessagesController extends Controller
     public function store(Request $request)
     {
         $message = Message::create($request->all());
+        Mail::to('kukulhasupp@gmail.com')->send(new NewContact($message));
+        Mail::to($message->email)->send(new MailReceived($message));
         return redirect()->route('home')->with('infom', 'Mensaje enviado correctamente');
     }
 
